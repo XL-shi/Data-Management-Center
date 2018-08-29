@@ -1,0 +1,14 @@
+.navbar-fixed-top {
+  border: none;
+  height: 70px;-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  /* line-height: 70px !important; */
+  border-radius: none;
+  background: url("/images/bg.jpg") no-repeat 0 -1000px;
+}
+.navbar-brand {
+  font-size: 25px;
+  color: #fff !important;
+}
