@@ -70,9 +70,9 @@ body {
   color: rgb(27, 27, 27);
 
 }
-.rightbox {
+/* .rightbox {
   display: none;
-}
+} */
 .web-info, .content-list, .modify-title {
   font-size: 15px;
   font-weight: bold;
@@ -98,4 +98,16 @@ body {
 .content-tab tbody tr td {
   line-height: 77px !important;
 
+}
+.success-popout {
+  width: 700px;
+  height: 40px;
+  margin: 10px auto;
+  text-align: center;
+  line-height: 10px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.success-popout .close {
+  top: -5px;
 }

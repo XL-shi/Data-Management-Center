@@ -27,8 +27,9 @@
         </div>
       </nav>  
     </div>  
-    <!-- 左侧侧边栏 -->
+
         <div class="row">
+    <!-- 左侧侧边栏 -->
             <div class="col-md-2">
               <div class="menu">菜单列表</div>
               <ul class="menu-list">
@@ -37,11 +38,16 @@
                   <li class="side-nav3">修改密码</li>
               </ul>
             </div>
+    <!-- 右侧主体 -->
             <div class="col-md-10 right-box">
                 <div class="panel panel-info web-info-box rightbox">
                     <div class="web-info panel-heading">网站信息</div>
+                    <div class=" hide success-popout alert alert-success alert-dismissible" role="alert">
+                      提交成功，请在栏目管理中查看哦~
+                      <button type="button" class="close" data-dismiss="alert"><span>&times;</span></button>  
+                    </div>
                     <div class="panel-body">
-                        <form class="form-horizontal">
+                        <form class="form-horizontal web-info-form">
                           <div class="form-group">
                             <label for="web-title" class="col-sm-2 left-text control-label">网站标题：</label>
                             <div class="col-sm-10">
@@ -86,7 +92,7 @@
                           </div>
                           <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                              <button type="submit" class="btn btn-info btn-add btn-default"> 提交 </button>
+                              <button type="button" class="btn btn-info btn-add btn-default"> 提交 </button>
                             </div>
                           </div>
                         </form>
@@ -157,12 +163,14 @@
                         </div>
                         <div class="form-group">
                           <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-info btn-add btn-default"> 提交 </button>
+                            <button type="submit" class="btn btn-info btn-default"> 提交 </button>
                           </div>
                         </div>
                       </form>
                   </div>
                 </div>
+
+               
             </div>
         </div>
   <script src="/lib/jquery/jquery-1.12.4.min.js"></script>
