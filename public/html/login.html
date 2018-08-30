@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="/lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/login.css">
     <title>Document</title>
 </head>
 <body>
@@ -15,23 +15,27 @@
             <div class="header">
                 <p>后台管理中心</p>
             </div>
+            
             <div class="input">
-                <input type="text" placeholder="登录账号">
-                <span>请填写账号</span>
-                <img src="../images/5_3$DCML4]}}3Z`0JKQSMJJ.png" class="user">
-                <img src="../images/UH`{N{M}E$1@}@B(41%4`GG.png" class="pass">
-                <input type="text" placeholder="登录密码" style="margin-top:22px;">
-                <span>请填写密码</span>
-                <input type="text" placeholder="请填写右方验证码" style="margin-top:22px; width: 200px;">
-                <span style="display:block; width: 135px;height: 46px;float: right;margin-top: 23px;">这是验证码图片</span>
-                <span>请填写右侧的验证码</span>
-                <input class="btn btn-default btn-primary" type="submit" value="登录">
-
+                <form class="login-form">
+                    <input type="text" name="username" placeholder="登录账号">
+                    <span>请填写账号</span>
+                    <img src="/images/1.png" class="user">
+                    <img src="/images/2.png" class="pass">
+                    <input type="text" name="password" placeholder="登录密码" style="margin-top:22px;">
+                    <span>请填写密码</span>
+                    <input type="text" placeholder="请填写右方验证码" style="margin-top:22px; width: 200px;">
+                    <span style="display:block; width: 135px;height: 46px;float: right;margin-top: 23px;">这是验证码图片</span>
+                    <span>请填写右侧的验证码</span>
+                    <input class="btn btn-default btn-primary login-btn"  value="登录">
+                    
+                </form>
             </div>
         </div>
     </div>
     
-    <script src="../lib/jquery/jquery-1.12.4.min.js"></script>    
-    <script src="../lib/bootstrap/js/bootstrap.min.js"></script>    
+    <script src="/lib/jquery/jquery-1.12.4.min.js"></script>    
+    <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/common/login.js"></script>    
 </body>
 </html>
