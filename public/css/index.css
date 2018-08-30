@@ -9,6 +9,7 @@ a {
   cursor: pointer;
   color: rgb(72, 127, 155) !important;
 }
+
 ul {
   list-style: none;
 }
@@ -18,6 +19,7 @@ ul {
 body {
   background: #eee;
 }
+
 .navbar-fixed-top {
   border: none;
   background: url("/images/bg.jpg") no-repeat 0 -1000px;
