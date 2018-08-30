@@ -35,7 +35,7 @@
               <ul class="menu-list">
                   <li class="side-nav1">网站设置</li>
                   <li class="side-nav2">栏目管理</li>
-                  <li class="side-nav3">修改密码</li>
+                  <li class="side-nav3">添加会员</li>
               </ul>
             </div>
     <!-- 右侧主体 -->
@@ -92,7 +92,7 @@
                           </div>
                           <div class="form-group">
                             <div class="col-sm-offset-2 col-sm-10">
-                              <button type="button" class="btn btn-info btn-add btn-default"> 提交 </button>
+                              <button type="button" class="btn btn-info btn-add btn-default">添加</button>
                             </div>
                           </div>
                         </form>
@@ -134,25 +134,19 @@
                   </div>
                 </div>
                 <div class="panel panel-info modify-password-box rightbox">
-                  <div class="modify-title panel-heading">修改会员密码</div>
+                  <div class="modify-title panel-heading">添加会员</div>
                   <div class="panel-body">
                       <form class="form-horizontal">
                         <div class="form-group">
                             <label for="user" class="col-sm-2 left-text control-label">管理员账号：</label>
                             <div class="col-sm-3">
-                              <p class="form-control">admin</p>
+                            <input type="text" class="form-control" id="new-user" >
                             </div>
                         </div>
                         <div class="form-group">
-                          <label for="old-password" class="col-sm-2 left-text control-label">原始密码：</label>
+                          <label for="password" class="col-sm-2 left-text control-label">密码：</label>
                           <div class="col-sm-3">
-                            <input type="password" class="form-control" id="old-password" >
-                          </div>
-                        </div>
-                        <div class="form-group">
-                          <label for="new-password" class="col-sm-2  left-text control-label">新密码：</label>
-                          <div class="col-sm-3">
-                            <input type="password"  class="form-control" id="new-password">
+                            <input type="password" class="form-control" id="password" >
                           </div>
                         </div>
                         <div class="form-group">
@@ -163,7 +157,7 @@
                         </div>
                         <div class="form-group">
                           <div class="col-sm-offset-2 col-sm-10">
-                            <button type="submit" class="btn btn-info btn-default"> 提交 </button>
+                            <button type="button" class="btn btn-info btn-default"> 提交 </button>
                           </div>
                         </div>
                       </form>

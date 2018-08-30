@@ -5,7 +5,7 @@ const userDao={
       return user.save();
     },
     find(userinfo){
-      return User.find(userinfo)        
+      return User.find(userinfo);        
     },
     updata(){},
     del(){}

@@ -52,7 +52,11 @@ span{
     top:69px;
     left: 288px;
 }
-.btn-primary{
-    margin-top: 50px;
+.login-btn{
+    margin-top: 10px;
     font-size: 15px;
+}
+svg {
+    width: 140px;
+    height: 46px;
 }
