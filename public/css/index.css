@@ -2,6 +2,13 @@
   margin: 0;
   padding: 0;
 }
+a {
+	text-decoration: none;
+}
+.menu-list li:hover {
+  cursor: pointer;
+  color: rgb(72, 127, 155) !important;
+}
 ul {
   list-style: none;
 }
@@ -61,7 +68,32 @@ body {
   color: rgb(27, 27, 27);
 
 }
-.web-info {
+.rightbox {
+  display: none;
+}
+.web-info, .content-list, .modify-title {
   font-size: 15px;
   font-weight: bold;
+}
+.btn-add {
+  font-size: 15px;
+  font-weight: bold;
+  width: 65px;
+  height: 35px;
+}
+.content-tab {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.content-tab thead tr th {
+  text-align: center;
+
+}
+.content-tab tbody tr {
+  height: 77px;
+}
+.content-tab tbody tr td {
+  line-height: 77px !important;
+
 }

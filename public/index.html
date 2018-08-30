@@ -28,56 +28,145 @@
       </nav>  
     </div>  
     <!-- 左侧侧边栏 -->
-
         <div class="row">
             <div class="col-md-2">
-                    <div class="menu">菜单列表</div>
-                    <ul class="menu-list">
-                        <li><a href="">网站设置</a></li>
-                        <li><a href="">栏目管理</a></li>
-                        <li><a href="">修改密码</a></li>
-                        <li></li>
-                    </ul>
+              <div class="menu">菜单列表</div>
+              <ul class="menu-list">
+                  <li class="side-nav1">网站设置</li>
+                  <li class="side-nav2">栏目管理</li>
+                  <li class="side-nav3">修改密码</li>
+              </ul>
             </div>
-            <div class="col-md-10">
-                <div class="panel panel-info">
+            <div class="col-md-10 right-box">
+                <div class="panel panel-info web-info-box rightbox">
                     <div class="web-info panel-heading">网站信息</div>
                     <div class="panel-body">
-                            <form class="form-horizontal">
-                                    <div class="form-group">
-                                      <label for="inputEmail3" class="col-sm-1 control-label">Email</label>
-                                      <div class="col-sm-11">
-                                        <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                                      </div>
-                                    </div>
-                                    <div class="form-group">
-                                      <label for="inputPassword3" class="col-sm-1 control-label">Password</label>
-                                      <div class="col-sm-11">
-                                        <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-                                      </div>
-                                    </div>
-                                      <!--   <div class="form-group">
-                                        <div class="col-sm-offset-1 col-sm-10">
-                                            <div class="checkbox">
-                                            <label>
-                                                <input type="checkbox"> Remember me
-                                            </label>
-                                            </div>
-                                        </div>
-                                        </div> -->
-                                    <!-- <div class="form-group">
-                                      <div class="col-sm-offset-2 col-sm-10">
-                                        <button type="submit" class="btn btn-default">Sign in</button>
-                                      </div>
-                                    </div> -->
-                                  </form>
+                        <form class="form-horizontal">
+                          <div class="form-group">
+                            <label for="web-title" class="col-sm-2 left-text control-label">网站标题：</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="title" class="form-control" id="web-title" >
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="web-logo" class="col-sm-2  left-text control-label">网站LOGO：</label>
+                            <div class="col-sm-10">
+                              <input type="file" name="logo" class="form-control" id="web-logo">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="web-domain" class="col-sm-2 left-text control-label">网站域名：</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="domain" class="form-control" id="web-domain" >
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="web-keyword" class="col-sm-2 left-text control-label">网站关键字：</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="keyword" class="form-control" id="web-keyword" >
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="web-desc" class="col-sm-2 left-text control-label">网站描述：</label>
+                            <div class="col-sm-10">
+                              <textarea type="text" cols="20" rows="3" name="desc" class="form-control" id="web-desc"></textarea>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="linkman" class="col-sm-2  left-text control-label">联系人：</label>
+                            <div class="col-sm-10">
+                              <input type="text" name="linkman" class="form-control" id="linkman">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <label for="email" class="col-sm-2  left-text control-label">Email地址：</label>
+                            <div class="col-sm-10">
+                              <input type="email" name="email" class="form-control" id="email">
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                              <button type="submit" class="btn btn-info btn-add btn-default"> 提交 </button>
+                            </div>
+                          </div>
+                        </form>
                     </div>
-                   
+                </div>
+                <div class="panel panel-info content-list-box rightbox ">
+                  <div class=" content-list panel-heading">内容列表</div>
+                  <div class="panel-body">
+                     <button type="button" class="btn btn-warning">添加内容</button>
+                     <table class="table content-tab table-hover table-bordered">
+                      <thead>
+                          <tr>
+                              <th>序号</th>
+                              <th>网站标题</th>
+                              <th>网站LOGO</th>
+                              <th>网站域名</th>
+                              <th>网站关键字</th>
+                              <th>网站描述</th>
+                              <th>联系人</th>
+                              <th>Email地址</th>
+                              <th colspan="2">操作</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>2ff</td>
+                          <td>faggah</td>
+                          <td>fasgfag</td>
+                          <td>dffd</td>
+                          <td>dfffd</td>
+                          <td>dffd</td>
+                          <td>5354865</td>
+                          <td><a href="#">修改</a></td>
+                          <td><a href="#"> 删除</a></td>
+                        </tr>
+                      </tbody>
+                  </table>
+                  </div>
+                </div>
+                <div class="panel panel-info modify-password-box rightbox">
+                  <div class="modify-title panel-heading">修改会员密码</div>
+                  <div class="panel-body">
+                      <form class="form-horizontal">
+                        <div class="form-group">
+                            <label for="user" class="col-sm-2 left-text control-label">管理员账号：</label>
+                            <div class="col-sm-3">
+                              <p class="form-control">admin</p>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="old-password" class="col-sm-2 left-text control-label">原始密码：</label>
+                          <div class="col-sm-3">
+                            <input type="password" class="form-control" id="old-password" >
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="new-password" class="col-sm-2  left-text control-label">新密码：</label>
+                          <div class="col-sm-3">
+                            <input type="password"  class="form-control" id="new-password">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label for="conf-password" class="col-sm-2 left-text control-label">确认密码：</label>
+                          <div class="col-sm-3">
+                              <input type="password"  class="form-control" id="conf-password">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <div class="col-sm-offset-2 col-sm-10">
+                            <button type="submit" class="btn btn-info btn-add btn-default"> 提交 </button>
+                          </div>
+                        </div>
+                      </form>
+                  </div>
                 </div>
             </div>
         </div>
-   
-      <script src="/lib/jquery/jquery-1.12.4.min.js"></script>
-      <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/lib/jquery/jquery-1.12.4.min.js"></script>
+  <script src="/lib/bootstrap/js/bootstrap.min.js"></script>
+  <script src="/js/index.js"></script>
 </body>
 </html>
