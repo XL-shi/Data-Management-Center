@@ -1,7 +1,19 @@
 function Index() {
     this.addListener();
+    this.load();
 }
 $.extend(Index.prototype, {
+    //加载页面登录
+    load(){
+        let user=sessionStorage.loginUser;
+        if(user){
+            user=JSON.parse(user);
+            $(".login-success").text(`欢迎：${user.username}`);
+            $(".loginOut").text("退出登录")
+        }
+    },
+
+
     // 注册事件  监听
     addListener(){
         $(".menu-list li").on("click", this.loadRightBox);

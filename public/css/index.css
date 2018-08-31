@@ -36,6 +36,15 @@ body {
   margin-top: 8px;
   margin-right :10px;
 }
+.login-success {
+  margin-top: 8px;
+  margin-right :10px;
+  cursor: context-menu;
+  color: #fff;
+}
+.login-success:hover{
+  color:#fff;
+}
 .row {
   margin-top: 20px;
   margin-right:0px;
