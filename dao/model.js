@@ -11,7 +11,7 @@ const User=mongoose.model("user",{
 const Web = mongoose.model("web", {
     title: String,
     logo: String,
-    damain: String,
+    domain: String,
     keyword: String,
     desc: String,
     linkman: String,

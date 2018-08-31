@@ -104,11 +104,10 @@ body {
 .content-tab tbody tr {
   height: 77px;
 }
-.content-tab tbody tr td {
-  line-height: 77px !important;
-
+.content-tab tbody tr td{
+  vertical-align: middle;
 }
-.success-popout {
+.success-popout, .failed-popout {
   width: 700px;
   height: 40px;
   margin: 10px auto;
