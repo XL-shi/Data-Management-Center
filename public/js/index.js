@@ -14,8 +14,13 @@ Index.listTemplate = `<% for(var i = 0; i < webinfo.length; i ++) { %>
                             <td><%= webinfo[i].desc %></td>
                             <td><%= webinfo[i].linkman %></td>
                             <td><%= webinfo[i].email %></td>
+<<<<<<< HEAD
                             <td><button class="btn btn-mod btn-info">修改</button></td>
                             <td><button class="btn btn-del btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm">删除</button></td>
+=======
+                            <td><button class="btn btn-mod btn-info" data-toggle="modal" data-target="#myModal">修改</button></td>
+                            <td><button class="btn btn-del btn-danger">删除</button></td>
+>>>>>>> 55fc0436a4d41d61ca76db532e0ae3f5283e3fd5
                         </tr>
                     <% } %>`;
 Index.paginationTemplate = `<% for(var i = 1; i <= totalPages; i ++ ) { %> 
@@ -121,6 +126,36 @@ $.extend(Index.prototype, {
                     }
                 })
             });
+        }).done(function(){
+            $(".weblist").on("click",".btn-mod",function(){
+                $(".web-info-box").show();
+                $(".content-list-box").hide();
+                $(".btn-delete").removeClass("hide").siblings().hide();
+                const _tr=$(this).parents("tr"),
+                id = _tr.data("id"),
+                title=_tr.children().eq(1).text(),
+                logo=_tr.children().eq(2).text(),
+                damain=_tr.children().eq(3).text(),
+                keyword=_tr.children().eq(4).text(),
+                desc=_tr.children().eq(5).text(),
+                linkman=_tr.children().eq(6).text(),
+                email=_tr.children().eq(7).text();
+                $("#web-title").val(title);
+                $("#web-logo").val(logo);
+                $("#web-damain").val(damain);
+                $("#web-keyword").val(keyword);
+                $("#web-desc").val(desc);
+                $("#linkman").val(title);
+                $("#email").val(email);
+                $(".btn-delete").on("click",function(){
+                    const data= $(".web-info-form").serialize();
+                    console.log(data);
+                    $.post("/web/update",data,resData=>{
+                        console.log(resData);
+                        location.reload();
+                    },"json")
+                })
+            })
         });
     },
     addContentHandler() {

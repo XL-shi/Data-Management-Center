@@ -13,8 +13,16 @@ const webDao = {
     find(){
 
     },
-    update(){
-        return Web.update();
+    update(webinfo){
+        return Web.update({email:webinfo.email},{$set:{
+            title:webinfo.title,
+            logo:webinfo.logo,
+            damain:webinfo.damain,
+            keyword:webinfo.keyword,
+            desc:webinfo.keyword,
+            linkman:webinfo.linkman,
+            // email:webinfo.email
+        }});
     },
     delete(webInfo){
         return Web.remove(webInfo);
