@@ -42,6 +42,17 @@ const webService =  {
                 .catch(err=>{
                     res.json({res_code:-1,res_err:"no exist",res_body:{}})            
                 })
+    },
+    update(req,res,next){
+        const {id,title,logo,damain,keyword,desc,linkman,email}=req.body;
+        webDao
+        .update({id,title,logo,damain,keyword,desc,linkman,email})
+        .then(data=>{
+            res.json({res_code:1,res_err:"",res_body:data})
+        })
+        .catch(err=>{
+            res.json({res_code:-1,res_err:"no exist",res_body:{}})
+        })
     }
 };
 

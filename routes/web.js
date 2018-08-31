@@ -18,4 +18,5 @@ const upload = multer({storage: storage});
 router.post('/add', upload.single("logo"), webService.add);
 router.get("/list", webService.listByPage);
 router.post("/delete",webService.delById);
+router.post("/update",webService.update);
 module.exports = router;

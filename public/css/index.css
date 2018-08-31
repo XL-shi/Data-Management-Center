@@ -79,9 +79,9 @@ body {
   color: rgb(27, 27, 27);
 
 }
-/* .rightbox {
+.rightbox {
   display: none;
-} */
+}
 .web-info, .content-list, .modify-title {
   font-size: 15px;
   font-weight: bold;
