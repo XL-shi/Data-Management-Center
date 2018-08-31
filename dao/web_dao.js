@@ -4,10 +4,11 @@ const webDao = {
         return new Web(webinfo).save();
     },
     count(){
-
+        return Web.find().count();
     },
-    findByPage(){
-
+    findByPage(page){
+        const pageSize = 5;
+        return Web.find().skip((page-1) * pageSize).limit(pageSize);
     },
     find(){
 
@@ -15,8 +16,8 @@ const webDao = {
     update(){
 
     },
-    delete(){
-
+    delete(webInfo){
+        return Web.remove(webInfo);
     }
 };
 module.exports = webDao;

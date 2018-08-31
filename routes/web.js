@@ -16,5 +16,6 @@ const storage = multer.diskStorage({
 const upload = multer({storage: storage});
 
 router.post('/add', upload.single("logo"), webService.add);
-
+router.get("/list", webService.listByPage);
+router.post("/delete",webService.delById);
 module.exports = router;
