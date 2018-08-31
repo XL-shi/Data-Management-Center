@@ -14,7 +14,7 @@ const webDao = {
 
     },
     update(){
-
+        return Web.update();
     },
     delete(webInfo){
         return Web.remove(webInfo);

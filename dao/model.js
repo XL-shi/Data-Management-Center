@@ -16,5 +16,5 @@ const Web = mongoose.model("web", {
     desc: String,
     linkman: String,
     email: String
-})
+});
   module.exports={User, Web};

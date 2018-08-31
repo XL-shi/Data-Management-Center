@@ -1,6 +1,7 @@
 function Index() {
     this.addListener();
     this.load();
+    this.createDom();
     this.loadPageHandler(1);
 }
 Index.listTemplate = `<% for(var i = 0; i < webinfo.length; i ++) { %>
@@ -14,13 +15,33 @@ Index.listTemplate = `<% for(var i = 0; i < webinfo.length; i ++) { %>
                             <td><%= webinfo[i].linkman %></td>
                             <td><%= webinfo[i].email %></td>
                             <td><button class="btn btn-mod btn-info">修改</button></td>
-                            <td><button class="btn btn-del btn-danger">删除</button></td>
+                            <td><button class="btn btn-del btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm">删除</button></td>
                         </tr>
                     <% } %>`;
 Index.paginationTemplate = `<% for(var i = 1; i <= totalPages; i ++ ) { %> 
                                 <li class=" <%= currentPage == i ? "active" : "" %>"><a href="#"><%= i %></a></li>
                             <% } %>`;
+Index.delModalTemplate = `<div class="modal bs-example-modal-sm fade" id="delModal" tabindex="-1" role="dialog" >
+                            <div class="modal-dialog modal-sm" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" ><span >&times;</span></button>
+                                <h4 class="modal-title" id="myModalLabel">删除提示</h4>
+                                </div>
+                                <div class="modal-body">
+                                真的要删掉吗？
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">不删啦</button>
+                                <button type="button" class="btn confdel btn-primary">是的哦</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>`;
 $.extend(Index.prototype, {
+    createDom(){
+        $(Index.delModalTemplate).appendTo("body");
+    },
     //加载页面登录
     load(){
         let user=sessionStorage.loginUser;
@@ -31,16 +52,16 @@ $.extend(Index.prototype, {
         }
     },
 
-
-    // 注册事件  监听
+    // 注册事件监听
     addListener(){
         $(".menu-list li").on("click", this.loadRightBox);
         $(".btn-add").on("click", this.addWebInfoHandler);
         $(".side-nav2").on("click",this.loadPageHandler);
         $(".pagination").on("click", "li", this.loadPageHandler);
+        $(".btn-addcontent").on("click", this.addContentHandler);
     },
     loadRightBox(){
-        // $(".rightbox").eq($(this).index()).show().siblings().hide();
+        $(".rightbox").eq($(this).index()).show().siblings().hide();
     },
     addWebInfoHandler(){
         if($(".web-info-form input").val() === "") {
@@ -84,18 +105,27 @@ $.extend(Index.prototype, {
             const pagination = ejs.render(Index.paginationTemplate, {totalPages: data.res_body.totalPages, currentPage: page});
             $(".pagination").html(pagination); 
         }).done(function () {
+            // 删除行数据
             $(".weblist").on("click", ".btn-del", function() {
                 const _tr = $(this).parents("tr"),
                     _id = _tr.data("id");
                     // console.log(_id );
                 $.post("/web/delete",{_id},(resData)=>{
-                    console.log(resData);
-                    console.log(_id);
+                    // console.log(resData);
+                    $("")
+                    if(resData.res_code === 1) {
+                        $(".confdel").on("click", () => {
+                            $("#delModal").modal("hide");
+                            _tr.remove();
+                        });
+                    }
                 })
-
-
             });
         });
+    },
+    addContentHandler() {
+        $(".web-info-box").show();
+        $(".content-list-box").hide();
     }
    
 });

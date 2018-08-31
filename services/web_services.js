@@ -34,14 +34,14 @@ const webService =  {
                 });
     },
     delById(req, res, next){
-        const {_id}=req.body;
+        const {_id} = req.body;
         webDao.delete({_id})
-                .then(data=>{
-                    res.json({res_code:1,res_err:"",res_body:data})
+                .then((data) => {
+                    res.json({res_code:1,res_err:"",res_body:data});
                 })
-                .catch(err=>{
-                    res.json({res_code:-1,res_err:"no exist",res_body:{}})            
-                })
+                .catch((err) => {
+                    res.json({res_code:-1,res_err:"no exist",res_body:{}});           
+                });
     }
 };
 

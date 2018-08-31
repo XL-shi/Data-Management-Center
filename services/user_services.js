@@ -9,6 +9,8 @@ const userServer={
            if(data.length===1){
                const _pass=data[0].password;
                if(bcrypt.compareSync(password, _pass)){
+                //    保存登录的用户名
+                    req.session.loginUser = username;
                     res.json({res_code:1,res_err:"",res_body:data[0]})
                }else{
                     res.json({res_code:-1,res_err:"no exist",res_body:{}})
@@ -33,6 +35,10 @@ const userServer={
         .catch(err=>{
             res.json({res_code:-1,res_err:err,res_body:{}})
         })
+    },
+    loginout(req, res, next) {
+        req.seeion.loginUser = null;
+        res.json({res_code: 1, res_err: "", res_body: {status: true}});
     }
 }
 
