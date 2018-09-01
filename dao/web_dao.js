@@ -3,6 +3,9 @@ const webDao = {
     save(webinfo) {
         return new Web(webinfo).save();
     },
+    findById(modinfo){
+        return Web.findById(modinfo.id);
+    },
     count(){
         return Web.find().count();
     },
@@ -10,19 +13,8 @@ const webDao = {
         const pageSize = 5;
         return Web.find().skip((page-1) * pageSize).limit(pageSize);
     },
-    find(){
-
-    },
-    update(webinfo){
-        return Web.update({email:webinfo.email},{$set:{
-            title:webinfo.title,
-            logo:webinfo.logo,
-            damain:webinfo.damain,
-            keyword:webinfo.keyword,
-            desc:webinfo.keyword,
-            linkman:webinfo.linkman,
-            // email:webinfo.email
-        }});
+    update(updateData){
+        return Web.findByIdAndUpdate(updateData.id,{$set:updateData});
     },
     delete(webInfo){
         return Web.remove(webInfo);

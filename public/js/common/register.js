@@ -25,6 +25,5 @@ $.extend(registerModel.prototype,{
           $(".ensureinfo").text("两次输入不一致，重输入");
         }  
     },
-
 })
 new registerModel();

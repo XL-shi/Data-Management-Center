@@ -7,6 +7,7 @@ const Captcha={
 	    res.type('html'); // 使用ejs等模板时如果报错 res.type('html')
 	    res.status(200).send(captcha.data);
     },
+    // 验证验证码
     verifycode(req,res,next){
         const {code}=req.query;
         if(code.toUpperCase()===req.session.captcha.toUpperCase()){

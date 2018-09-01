@@ -79,11 +79,7 @@ body {
   color: rgb(27, 27, 27);
 
 }
-<<<<<<< HEAD
 .content-list-box , .modify-password-box {
-=======
-.rightbox {
->>>>>>> 55fc0436a4d41d61ca76db532e0ae3f5283e3fd5
   display: none;
 }
 .web-info, .content-list, .modify-title {
@@ -122,4 +118,17 @@ body {
 }
 .success-popout .close {
   top: -5px;
+}
+.logobox {
+  position: relative;
+}
+.logobox .logo-hide {
+  width: 400px;
+  height: 32px;
+  background: #fff;
+  position: absolute;
+  top:1px;
+  line-height: 32px;
+  left: 102px;
+  padding-left: 3px;
 }

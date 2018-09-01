@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 const path = require("path");
 const webService = require("../services/web_services");
+
 // 文件上传的配置
 const multer = require("multer");
 const storage = multer.diskStorage({
@@ -14,9 +15,14 @@ const storage = multer.diskStorage({
     }
 });
 const upload = multer({storage: storage});
-
+// 添加网站信息
 router.post('/add', upload.single("logo"), webService.add);
+// 列表数据查询显示
 router.get("/list", webService.listByPage);
+// 通过id来删除数据
 router.post("/delete",webService.delById);
-router.post("/update",webService.update);
+// 修改数据
+router.post("/update", upload.single("logo"), webService.update);
+// 通过id 查询数据
+router.post("/find", webService.findById);
 module.exports = router;

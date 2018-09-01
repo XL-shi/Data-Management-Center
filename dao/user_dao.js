@@ -6,8 +6,6 @@ const userDao={
     },
     find(userinfo){
       return User.find(userinfo);        
-    },
-    updata(){},
-    del(){}
+    }
 };
 module.exports=userDao;

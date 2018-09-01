@@ -27,6 +27,20 @@ app.use(session({
   saveUninitialized: true,
   cookie: { maxAge:45*60*1000}
 }));
+
+// 判断用户是否登录
+app.use(function(req, res, next) {
+  const {url} = req;
+  if(url === "/") {
+    const user = req.session.loginUser;
+    if (!user) {
+      res.redirect("/html/login.html");
+      return false;
+    }
+  }
+  next();
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
