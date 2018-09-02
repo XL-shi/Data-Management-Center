@@ -144,7 +144,6 @@ $.extend(Index.prototype, {
             // 点击修改按钮跳转到修改板面进行修改数据
             $(".weblist").on("click",".btn-mod",function(){
                 $(".logo-hide").show();
-
                 $(".web-info-box").show().siblings($(".content-list-box")).hide();
                 $(".btn-modify").removeClass("hide").siblings().hide();
                 const _tr=$(this).parents("tr"),
@@ -157,6 +156,8 @@ $.extend(Index.prototype, {
                 linkman=_tr.children().eq(6).text(),
                 email=_tr.children().eq(7).text();
                 // console.log(id);
+                console.log(desc);
+
                 $.post("/web/find", {id}, (data) => {
                     // console.log(data);
                     // console.log(data.res_body.logo);
@@ -169,14 +170,12 @@ $.extend(Index.prototype, {
                     $("#web-desc").val(desc);
                     $("#linkman").val(title);
                     $("#email").val(email);
-                   
                 });  
             })
         }).then(function(){
             $("#web-logo").on("change", function(){
                 if($("#web-logo").val() !== "") {
                     $(".logo-hide").hide();
-                    console.log("jjj");
                 }
             });
         }).then(function(){
